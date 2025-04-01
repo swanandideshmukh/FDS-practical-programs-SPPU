@@ -1,0 +1,55 @@
+class SOP:
+def f1(self,S):
+words = S.split()
+longest = max(words, key=len)
+print("Word with longest length in given string is: ",longest,"\n")
+def f2(self, S):
+res = {i: S.count(i) for i in set(S)}
+c = input("Enter character which you want to check frequency of occurrence: ")
+print("frequency of occurrence of ",c," is: ",res[c],"\n")
+def f3(self, S):
+if S == S[::-1]:
+print("Given string is palindrome\n")
+else:
+print("Given string is not palindrome\n")
+def f4(self, S):
+substring = input("Enter a substring: ")
+idxsubstring = S.find(substring)
+print("Index of ",substring," is ",idxsubstring,"\n")
+def f5(self, S):
+word_list = S.split()
+res = {i:word_list.count(i) for i in set(word_list)}
+print("occurance of each word is ",res,"\n")
+
+def getdata(self):
+S = input("Enter a string: ")
+print("")
+return S
+
+obj = SOP()
+print("1:To display word with longest length\n2:To determine the frequency of occurence of perticuler character in the string\n3:To check weather given string is palindrom or not\n4:To display index of first appearence of the substring\n5:To count the occurance of each word in a given string\n6:To Exit\n")
+choice = int(input("Enter a choice which you want: "))
+print("")
+
+while(choice != 6):
+
+S = obj.getdata()
+
+if choice == 1:
+obj.f1(S)
+elif choice == 2:
+obj.f2(S)
+elif choice == 3:
+obj.f3(S)
+elif choice == 4:
+obj.f4(S)
+elif choice == 5:
+obj.f5(S)
+elif choice == 6:
+break
+else:
+print("Enter correct choice: ")
+
+print("1:To display word with longest length\n2:To determine the frequency of occurence of perticuler character in the string\n3:To check weather given string is palindrom or not\n4:To display index of first appearence of the substring\n5:To count the occurance of each word in a given string\n6:To Exit\n")
+choice = i
+print("")
