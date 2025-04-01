@@ -1,0 +1,48 @@
+class Setop:
+def f1(self,groupA,groupB):
+print("List of students who plays both cricket & badminton",(groupA&groupB))
+
+def f2(self,groupA,groupB):
+print("List of student who plays either cricket or badminton",((groupA-groupB)|(groupB-groupA)))
+
+def f3(self,groupA,groupB,groupC):
+print("No.of students who plays neither cricket nor badminton",(groupC-(groupA|groupB)))
+
+def f4(self,groupA,groupB,groupC):
+print("No.of students who plays cricket & fooball not badminton",((groupA|groupC)-groupB))
+
+def getInfo(self,grp_name):
+Groups = set()
+num = int(input("Enter no.of students in group"+grp_name+": "))
+for i in range(num):
+name = input("Enter name of student "+str(i+1)+": ")
+Groups.add(name)
+print("")
+return Groups
+
+obj = Setop()
+print("1:List of students who plays cricket & badminton\n2:List of student who plays either cricket or badminton\n3:No.of students who plays neither cricket nor badminton\n4:No.of students who plays cricket & fooball not badminton\n5:Exit")
+choice = int(input("Enter your choice: "))
+print("")
+while choice != 5:
+
+groupA = obj.getInfo("A")
+groupB = obj.getInfo("B")
+groupC = obj.getInfo("C")
+
+if choice == 1:
+obj.f1(groupA,groupB)
+elif choice == 2:
+obj.f2(groupA,groupB)
+elif choice == 3:
+obj.f3(groupA,groupB,groupC)
+elif choice == 4:
+obj.f4(groupA,groupB,groupC)
+elif choice ==5:
+break
+else:
+print("Enter correct choice: ")
+
+print("1:List of students who plays cricket & badminton\n2:List of student who plays either cricket or badminton\n3:No.of students who plays neither cricket nor badminton\n4:No.of students who plays cricket & fooball not badminton\n5:Exit")
+choice = int(input("Enter your choice: "))
+print("")
